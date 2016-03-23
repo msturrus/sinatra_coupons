@@ -1,4 +1,4 @@
-class AccountController < ApplicationController
+class AccountsController < ApplicationController
 
   # get '/' do
   #   Account.all.to_json
@@ -22,7 +22,6 @@ class AccountController < ApplicationController
     # assume this worked!
     @all_users = Account.all # this kinda sucks IRL but SOOOOONNN
     @all_users.each do |user|
-      c.log(:yellow, user.to_s)
     end
     redirect '/'
   end
@@ -41,7 +40,6 @@ class AccountController < ApplicationController
 
     @all_users = Account.all # this kinda sucks IRL but SOOOOONNN
     @all_users.each do |user|
-      c.log(:yellow, user.to_s)
       if (user.email == params[:email])
         status 403
       end
@@ -68,7 +66,6 @@ class AccountController < ApplicationController
   post '/update' do
     @all_users = Account.all # this kinda sucks IRL but SOOOOONNN
     @all_users.each do |user|
-      c.log(:yellow, user.to_s)
     end
   end
 
