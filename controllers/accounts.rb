@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-
+  @account_message = ''
   # get '/' do
   #   Account.all.to_json
   # end
@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
 
   get '/' do
     p 'This is the account login/register page'
-    @account_message = "Welcome! Please register or login!"
+    @account_message = "Give your account Details to me, Mr. Stoneman!"
     erb :account_create
   end
 
@@ -25,7 +25,6 @@ class AccountsController < ApplicationController
   end
 
   get '/logout' do
-    @account_message = "THANK YOU FOR VISITING US! PLZ COME BACK TYYYYY!"
     redirect '/'
   end
 
@@ -48,6 +47,8 @@ class AccountsController < ApplicationController
 
   get '/all' do
     @all_users = Account.all
+    @account_message = 'These are all the accounts'
+
     erb :account
   end
 

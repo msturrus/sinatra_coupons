@@ -1,7 +1,9 @@
 class CouponsController < ApplicationController
+  @account_message = ''
+
   get '/' do
     p 'This is the account login/register page'
-    @account_message = "Welcome! Please register or login!"
+    @account_message = "You can make whatever coupon you want!"
     erb :coupon_create
   end
 
@@ -20,6 +22,7 @@ class CouponsController < ApplicationController
 
   get '/all' do
     @all_coupons = Coupon.all
+    @account_message = 'These are all the coupons'
     erb :coupon
   end
 end
