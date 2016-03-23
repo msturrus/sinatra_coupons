@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
 
   ActiveRecord::Base.establish_connection(
     :adapter => 'postgresql',
-    :database => 'omg_wtfbbq_app_sinatra'
+    :database => 'sinatra_coupon'
   )
 
   set :public_folder, File.expand_path('../../public', __FILE__)
@@ -15,11 +15,12 @@ class ApplicationController < Sinatra::Base
   set :views, File.expand_path('../../views', __FILE__)
 
   get '/' do
-    erb :account
+    erb :account_create
   end
-  # not_found do
-  #   erb :notfound
-  # end
+
+  not_found do
+    erb :notfound
+  end
 
 
 

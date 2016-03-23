@@ -19,11 +19,10 @@ class AccountsController < ApplicationController
   end
 
   post '/login' do
-    # assume this worked!
-    @all_users = Account.all # this kinda sucks IRL but SOOOOONNN
-    @all_users.each do |user|
-    end
-    redirect '/'
+    @all_users = Account.all
+    # @all_users.each do |user|
+    # end
+    erb :account
   end
 
   get '/logout' do
@@ -33,17 +32,7 @@ class AccountsController < ApplicationController
 
   post '/create' do
     #binding.pry
-    @is_user_duplicate = true
-    if (params[:password] != params[:password_conf])
-      status 403
-    end
 
-    @all_users = Account.all # this kinda sucks IRL but SOOOOONNN
-    @all_users.each do |user|
-      if (user.email == params[:email])
-        status 403
-      end
-    end
 
     @new_user = Account.create({
       :name => params[:name],
@@ -63,15 +52,9 @@ class AccountsController < ApplicationController
     erb :account_update
   end
 
-  post '/update' do
-    @all_users = Account.all # this kinda sucks IRL but SOOOOONNN
-    @all_users.each do |user|
-    end
-  end
-
   get '/all' do
     @all_users = Account.all
-    erb :account_all
+    erb :account
   end
 
 end

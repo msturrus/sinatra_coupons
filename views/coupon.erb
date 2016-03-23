@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <% @all_coupons.each do |coupon| %>
+      ​
+        <li>
+          <%= coupon.title %> is <%= coupon.description %> which costs <%= coupon.discount_price %> after discount and expires on <%= coupon.expiration_date %>
+        </li>
+      ​
+      <% end %>
+      </div>
+    </div>
+</div>
