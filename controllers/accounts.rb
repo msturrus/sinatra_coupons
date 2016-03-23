@@ -20,8 +20,7 @@ class AccountsController < ApplicationController
 
   post '/login' do
     @all_users = Account.all
-    # @all_users.each do |user|
-    # end
+
     erb :account
   end
 
@@ -31,24 +30,19 @@ class AccountsController < ApplicationController
   end
 
   post '/create' do
-    #binding.pry
 
 
     @new_user = Account.create({
       :name => params[:name],
       :email => params[:email],
-      :password_hash => params[:password].to_s.reverse # do not irl srs
+      :password_hash => params[:password].to_s.reverse
     })
-    # @new_user = Account.new
-    # @new_user.name = params[:name]
-    # @new_user.email = params[:email]
+
     @new_user.save
     redirect '/'
   end
 
   get '/update' do
-    @old_email = "james@codeforcoffee.org"
-    @account_message = "Did you move? We need to track.. err help you!"
     erb :account_update
   end
 

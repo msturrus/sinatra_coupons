@@ -84,7 +84,7 @@ filter: blur(20px);
 
 .center {
   position: fixed;
-  top:calc(50% - 50px/2 - 200px); /* height divided by 2*/
+  top:calc(50% - 50px/2 - 250px); /* height divided by 2*/
   left:calc(50% - 50px/2 - 125px);
   -webkit-transform: scale(2) translate(0px);
 }
@@ -107,7 +107,7 @@ filter: blur(20px);
 .abrasive3 {
   position: fixed;
   opacity: 1;
-  -webkit-transform: rotate(-11775deg) scale(.01) translate(-1000px);
+  -webkit-transform: rotate(-11775deg) scale(.05) translate(-1000px);
   -moz-transform: rotate(1725deg) scale(1.8) translate(100px);
   -o-transform: rotate(1725deg) scale(.01) translate(100px);
   -ms-transform: rotate(1725deg) scale(.01) translate(100px);
@@ -125,7 +125,7 @@ filter: blur(20px);
 .abrasive4 {
   position: fixed;
   opacity: 1;
-  -webkit-transform: rotate(-11775deg) scale(.01) translate(-1000px);
+  -webkit-transform: rotate(-11775deg) scale(.05) translate(-1000px);
   -moz-transform: rotate(1725deg) scale(1.8) translate(100px);
   -o-transform: rotate(1725deg) scale(.01) translate(100px);
   -ms-transform: rotate(1725deg) scale(.01) translate(100px);

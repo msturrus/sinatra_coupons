@@ -15,7 +15,7 @@ class CouponsController < ApplicationController
     })
 
     @new_coupon.save
-    redirect '/'
+    redirect '/all'
   end
 
   get '/all' do
