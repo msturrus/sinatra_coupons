@@ -84,7 +84,7 @@ filter: blur(20px);
 
 .center {
   position: fixed;
-  top:calc(50% - 50px/2 - 250px); /* height divided by 2*/
+  top:calc(50% - 50px/2 - 150px); /* height divided by 2*/
   left:calc(50% - 50px/2 - 125px);
   -webkit-transform: scale(2) translate(0px);
 }
