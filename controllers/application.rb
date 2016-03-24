@@ -15,13 +15,12 @@ class ApplicationController < Sinatra::Base
   set :views, File.expand_path('../../views', __FILE__)
 
   get '/' do
+    @account_message = "Welcome to Stoneman Discountables, where you'll always find rock-bottom prices!"
     erb :account_create
   end
 
   not_found do
     erb :notfound
   end
-
-
 
 end

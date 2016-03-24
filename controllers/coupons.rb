@@ -25,4 +25,20 @@ class CouponsController < ApplicationController
     @account_message = 'These are all the coupons'
     erb :coupon
   end
+
+  get '/delete' do
+    erb :delete
+    @account_message = 'Delete is a big step'
+  end
+
+  post '/deleteall' do
+
+    @all_coupons = Coupon.all
+    @all_couponts.destroy
+
+    @account_message = 'You just deleted everything!  Why would you do that?'
+
+    redirect '/'
+  end
+
 end

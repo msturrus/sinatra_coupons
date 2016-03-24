@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
 
   get '/' do
     p 'This is the account login/register page'
-    @account_message = "Give your account Details to me, Mr. Stoneman!"
+    @account_message = "Welcome to Stoneman Discountables, where you'll always find rock-bottom prices!"
     erb :account_create
   end
 
@@ -50,6 +50,20 @@ class AccountsController < ApplicationController
     @account_message = 'These are all the accounts'
 
     erb :account
+  end
+
+  get '/delete' do
+    erb :delete
+    @account_message = 'Delete is a big step'
+  end
+
+  post '/deleteall' do
+    @all_users = Account.all
+    @all_users.destroy
+
+    @account_message = 'You just deleted everything!  Why would you do that?'
+
+    erb :delete
   end
 
 end
